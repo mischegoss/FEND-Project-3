@@ -1,13 +1,15 @@
+let enemySpeed = 200;
 
-var Enemy = function (x, y) {
-  this.sprite = 'images/enemy-bug.png';
-  this.x = x;
-  this.y = y;
-};
-//First Commit
+var Enemy =
+  function (x, y, speed) {
+    this.sprite = 'images/enemy-bug.png';
+    this.y = y;
+    this.x = x;
+    this.speed = Math.random() * 200 + enemySpeed;
+  };
 
 Enemy.prototype.update = function (dt) {
-  this.x += 1;
+  this.x += this.speed * dt;
   if (this.x > 500) {
     this.x = -100;
   }
@@ -17,19 +19,23 @@ Enemy.prototype.render = function() {
  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
-var Player = function() {
- this.x = 200;
- this.y = 350;
- this.sprite = 'images/char-boy.png';
-};
-Player.prototype.update = function(dt) {
-};
-Player.prototype.render = function() {
- ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+class Player {
+  constructor() {
+    this.x = 200;
+    this.y = 350;
+    this.sprite = 'images/char-boy.png';
+  }
+ render() {
+    ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+ }
+ update(dt) {
+
+ }
 };
 
-var allEnemies = [new Enemy(-200, 65), new Enemy(-150, 145), new Enemy(-100, 230)];
-var player = new Player();
+const allEnemies = [new Enemy(-200, 65), new Enemy(-150, 145), new Enemy(-100, 230)];
+const player = new Player();
+
 
 document.addEventListener('keyup', function(e) {
     var allowedKeys = {

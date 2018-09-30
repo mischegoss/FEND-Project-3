@@ -1,18 +1,26 @@
 let enemySpeed = 200;
-
-var Enemy =
+class Enemy {
+  constructor(x,y,speed)  {
+    this.sprite = 'images/enemy-bug.png';
+    this.y = y;
+    this.x = x;
+    this.speed = Math.random() * 200 + enemySpeed;
+  }
+};
+/*var Enemy =
   function (x, y, speed) {
     this.sprite = 'images/enemy-bug.png';
     this.y = y;
     this.x = x;
     this.speed = Math.random() * 200 + enemySpeed;
   };
-
+*/
 Enemy.prototype.update = function (dt) {
   this.x += this.speed * dt;
   if (this.x > 500) {
     this.x = -100;
   }
+
 };
 
 Enemy.prototype.render = function() {
@@ -32,7 +40,7 @@ class Player {
 
  }
 };
-
+const enemy = new Enemy();
 const allEnemies = [new Enemy(-200, 65), new Enemy(-150, 145), new Enemy(-100, 230)];
 const player = new Player();
 

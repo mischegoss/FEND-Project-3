@@ -1,5 +1,5 @@
 //Variables
-let enemySpeed = 100; //To make it easier to change enemySpeed if levels are created
+let enemySpeed = 200; //To make it easier to change enemySpeed if levels are created
 let stepSize = 101;
 let jumpSize = 85;
 let winner = false;

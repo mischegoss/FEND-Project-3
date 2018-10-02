@@ -10,9 +10,10 @@ class Enemy {
     this.sprite = "images/enemy-bug.png";
     this.y = y;
     this.x = x;
-    this.speed = Math.random() * enemySpeed/2 + enemySpeed; //Randomizes the speed of the enemy
+    this.speed = Math.random() * enemySpeed / 2 + enemySpeed; //Randomizes the speed of the enemy
   }
-  update(dt) { //Moves the bugs across the rows
+  update(dt) {
+    //Moves the bugs across the rows
     this.x += this.speed * dt;
     if (this.x > 500) {
       this.x = -100;
@@ -22,9 +23,9 @@ class Enemy {
       this.y === player.y &&
       (this.x + stepSize / 2 > player.x && this.x < player.x + stepSize / 2)
     ) {
-      player.reset()
+      player.reset();
     }
-  }
+  };
   // This was provided in starter code
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
@@ -39,11 +40,11 @@ class Player {
     this.step = stepSize; // This sets how big the step is so moves one block
     this.jump = jumpSize; // at a time.
     this.win = false;
-  }
+  };
   //This is just using the same method as the provided Enemy method above
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-  }
+  };
 
   // This moves the Player. Method based on Matthew Cranford's tutorial. Replaces clunkier  'if else' method.
   handleInput(input) {
@@ -73,34 +74,24 @@ class Player {
           break;
         }
     }
-  }
-  update() { //when player gets to the other side, win modal triggered
+  };
+//when player gets to the other side, win alert triggers
+  update() {
+
     if (this.y === 395) {
       setTimeout(function(){ alert("YOU WON! 🎉🎉🎉🎉🎉🎉"); }, 500);
-      this.y = this.y + 1;
-      this.x = this.x +1;
-      const smile = document.querySelector('.replay-click');
-      smile.classList.remove('hide');
-
-
+      this.y = this.y + 1;// This just moves the sprite slightly
+      this.x = this.x + 1;// so it doesn't keep alerting
+      const smile = document.querySelector(".replay-click"); // Triggers play again
+      smile.classList.remove("hide");// function after first game. Allows reset.
     }
-
-
-
-    }
+  };
 
   reset() {
     this.x = 200; // Returns player to original position
     this.y = -30;
-
   }
 };
-
-function won() {
-    player.reset();
-    alert('You won!');
-}
-
 
 const enemy = new Enemy();
 // array makes multiple enemies
@@ -112,9 +103,6 @@ const allEnemies = [
 ];
 
 const player = new Player();
-
-
-
 
 // This is the provided Event Listener
 document.addEventListener("keyup", function(e) {

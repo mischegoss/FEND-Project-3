@@ -1,6 +1,20 @@
-frontend-nanodegree-arcade-game
-===============================
+** FEND Arcade Game **
+This is the third project in Udacity FEND's project. It uses starter code provided by Udacity here: https://github.com/udacity/frontend-nanodegree-arcade-game.
 
-Students should use this [rubric](https://review.udacity.com/#!/projects/2696458597/rubric) for self-checking their submission. Make sure the functions you write are **object-oriented** - either class functions (like Player and Enemy) or class prototype functions such as Enemy.prototype.checkCollisions, and that the keyword 'this' is used appropriately within your class and class prototype functions to refer to the object the function is called upon. Also be sure that the **readme.md** file is updated with your instructions on both how to 1. Run and 2. Play your arcade game.
+** How to Play **
+You can play the game here: https://mischegoss.github.io/FEND-Project-3/.
 
-For detailed instructions on how to get started, check out this [guide](https://docs.google.com/document/d/1v01aScPjSWCCWQLIpFqvg3-vXLH2e8_SZQKC8jNO0Dc/pub?embedded=true).
+The player is located at the top of the screen. To win, you have to navigate using your keyboard arrows to get to the bottom of the screen.
+
+If you win, an alert will be triggered and you will have the option to play again.
+
+** Resources **
+
+For this project, I used the following resources:
+* Matthew Cranford's tutorial (especially for the SWITCH method and math on step size)
+* Student Help/Slack (especially for getting the canvas to show up)
+* Ryan Waite's Walkthrough for GwG Program (especially for the logic of collisions) Here: https://www.youtube.com/watch?v=h_vUG-vi2LY
+
+** Dependencies **
+
+* Starter Code provided by Udacity

@@ -1,5 +1,4 @@
 //Variables
-const modal = document.querySelector('.modal');
 let enemySpeed = 100; //To make it easier to change enemySpeed if levels are created
 let stepSize = 101;
 let jumpSize = 85;
@@ -39,18 +38,13 @@ class Player {
     this.sprite = "images/char-horn-girl.png"; // Sets the Sprite image
     this.step = stepSize; // This sets how big the step is so moves one block
     this.jump = jumpSize; // at a time.
+    this.win = false;
   }
   //This is just using the same method as the provided Enemy method above
   render() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
   }
-  update() { //when player gets to the other side, win modal triggered
-    if (this.y >= 380) {
-      console.log("WIN!");
-      this.winner = true;
 
-    }
-  }
   // This moves the Player. Method based on Matthew Cranford's tutorial. Replaces clunkier  'if else' method.
   handleInput(input) {
     switch (input) {
@@ -80,12 +74,33 @@ class Player {
         }
     }
   }
+  update() { //when player gets to the other side, win modal triggered
+    if (this.y === 395) {
+      setTimeout(function(){ alert("YOU WON! 🎉🎉🎉🎉🎉🎉"); }, 500);
+      this.y = this.y + 1;
+      this.x = this.x +1;
+      const smile = document.querySelector('.replay-click');
+      smile.classList.remove('hide');
+
+
+    }
+
+
+
+    }
+
   reset() {
-    this.x = 200; // Returns player to original position on collision
+    this.x = 200; // Returns player to original position
     this.y = -30;
 
   }
 };
+
+function won() {
+    player.reset();
+    alert('You won!');
+}
+
 
 const enemy = new Enemy();
 // array makes multiple enemies
@@ -97,6 +112,9 @@ const allEnemies = [
 ];
 
 const player = new Player();
+
+
+
 
 // This is the provided Event Listener
 document.addEventListener("keyup", function(e) {

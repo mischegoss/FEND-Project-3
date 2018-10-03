@@ -6,7 +6,7 @@ let winner = false;
 
 //Reconfigured starter code to use class
 class Enemy {
-  constructor(x, y, speed) {
+  constructor(x, y) {
     this.sprite = "images/enemy-bug.png";
     this.y = y;
     this.x = x;

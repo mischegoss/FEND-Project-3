@@ -4,7 +4,7 @@ This is the third project in Udacity FEND's project. It uses [starter code](http
 ## How to Play
 You can play the game [here](https://mischegoss.github.io/FEND-Project-3/)
 
-Alternatively, you can download the files into a local directory. Then, open the index.html in a web browser of your choice to run the game.
+Alternatively, you can download the files into a local directory. Then, open the `index.html` in a web browser of your choice to run the game.
 
 The player is located at the top of the screen. To win, you have to navigate using your keyboard arrows to get across the road to the bottom of the screen without running into any bugs.
 

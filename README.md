@@ -6,7 +6,7 @@ You can play the game [here](https://mischegoss.github.io/FEND-Project-3/)
 
 Alternatively, you can download the files into a local directory. Then, open the `index.html` in a web browser of your choice to run the game.
 
-The player is located at the top of the screen. To win, you have to navigate using your keyboard arrows to get across the road to the bottom of the screen without running into any bugs.
+The player is located at the top of the screen. To win, you have to navigate using your keyboard arrow keys (up, down, right, left) to get across the road to the bottom of the screen without running into any bugs.
 
 If you win, an alert will be triggered and you will have the option to play again.
 
